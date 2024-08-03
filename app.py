@@ -54,6 +54,10 @@ if uploaded_file is not None:
 submit1 = st.button("Tell me About the Resume")
 submit3 = st.button("Percentage Match")
 
+custom_query = st.text_area("Enter your query related to the uploaded PDF:")
+submit_custom_query = st.button("Submit Query")
+
+
 input_prompt1 = """
 You are an experienced HR with Tech Experience in the field of any one job role from Data Science, Full stack Web development, Big Data Engineering,
 DEVOPS, Data Analyst your task is to review the provided resume against the job description for these profiles.
@@ -80,6 +84,14 @@ elif submit3:
         pdf_content = input_pdf_setup(uploaded_file)
         response= get_gemini_response(input_prompt3, pdf_content, input_text)
         st.subheader("The Response is: ")
+        st.write(response)
+    else:
+        st.write("Please upload the resume")
+elif submit_custom_query:
+    if uploaded_file is not None:
+        pdf_content = input_pdf_setup(uploaded_file)
+        response = get_gemini_response(custom_query, pdf_content, input_text)
+        st.subheader("The Response to Your Query is: ")
         st.write(response)
     else:
         st.write("Please upload the resume")
