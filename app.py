@@ -9,7 +9,7 @@ import pdf2image
 import google.generativeai as genai
 
 genai.configure(api_key = os.getenv("GOOGLE_API_KEY"))
-poppler_path = r'C:\Program Files (x86)\poppler\Library\bin'
+# poppler_path = r'C:\Program Files (x86)\poppler\Library\bin'
 
 def get_gemini_response(input, pdf_content, prompt):
     model = genai.GenerativeModel('gemini-1.5-flash')
@@ -20,7 +20,8 @@ def get_gemini_response(input, pdf_content, prompt):
 def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
         ## convert pdf to image
-        images = pdf2image.convert_from_bytes(uploaded_file.read(), poppler_path=poppler_path)
+        # images = pdf2image.convert_from_bytes(uploaded_file.read(), poppler_path=poppler_path)
+        images = pdf2image.convert_from_bytes(uploaded_file.read())
 
         first_page = images[0]
 
