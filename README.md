@@ -10,6 +10,8 @@ ATS Resume Expert is a web application designed to help HR professionals and job
 - **Resume Upload**: Upload resumes in PDF format for analysis.
 - **Professional Evaluation**: Receive a detailed evaluation of how well a resume aligns with the job description, highlighting strengths and weaknesses.
 - **Match Percentage**: Get a percentage match between the resume and the job description, including details on missing keywords and final thoughts.
+- **Custom Query**: Submit custom queries related to the uploaded resume and receive AI-generated responses.
+
 
 ## Tech Stack
 
